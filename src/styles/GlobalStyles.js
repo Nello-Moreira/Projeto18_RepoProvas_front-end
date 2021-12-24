@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
+import './fonts.css';
 
 const GlobalStyle = createGlobalStyle`
 	:root {
-	background-color: #6d7ce4;
-	font-family: 'Roboto', sans-serif;
+		background-color: #fff;
+		font-family: 'Roboto', sans-serif;
+		
+		* {
+			box-sizing: border-box;
+		}
 	}
 `;
 
