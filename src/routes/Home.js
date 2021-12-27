@@ -26,7 +26,7 @@ const HomeCover = styled.div`
 	height: 100vh;
 	width: 100vw;
 	padding: 30px;
-	background-color: ${theme.cover.backgroundColor};
+	background-color: ${theme.cover.background};
 	display: flex;
 	align-items: center;
 	justify-content: center;

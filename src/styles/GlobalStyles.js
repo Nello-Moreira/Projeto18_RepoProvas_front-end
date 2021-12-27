@@ -1,14 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
 import './fonts.css';
+import theme from './theme';
 
 const GlobalStyle = createGlobalStyle`
 	:root {
-		background-color: #fff;
+		font-size: 20px;
 		font-family: 'Roboto', sans-serif;
 		
 		* {
 			box-sizing: border-box;
 		}
+	}
+	
+	body #root{
+		min-height: 100vh;
+		background-color: ${theme.main.backgroundColor};
 	}
 `;
 
