@@ -26,11 +26,12 @@ export default function Login() {
 		if (storedUser) {
 			checkToken({ token: storedUser.token })
 				.then(response => {
+					setFirstLoad(false);
+
 					if (response.data.valid) {
 						setUser(storedUser);
 						navigate(routes.allCourses);
 					}
-					setFirstLoad(false);
 				})
 				.catch(() => {
 					setFirstLoad(false);
@@ -58,7 +59,6 @@ export default function Login() {
 				saveUser(response.data);
 				setUser(response.data);
 				navigate(routes.allCourses);
-				setLoading(false);
 			})
 			.catch(error => {
 				alert(loginErrors(error));
