@@ -6,4 +6,8 @@ const axiosBase = axios.create({
 
 const postSignUp = signUpBody => axiosBase.post('/sign-up', signUpBody);
 
-export { postSignUp };
+const postLogin = loginBody => axiosBase.post('/login', loginBody);
+
+const checkToken = token => axiosBase.post('/session', token);
+
+export { postSignUp, postLogin, checkToken };
