@@ -12,7 +12,7 @@ export default function StandardForm({ formLabel, onSubmit, children }) {
 
 const FormStyle = styled.form`
 	width: 50vw;
-	margin: auto auto;
+	margin-bottom: 50px;
 	padding: 1.5rem 1rem;
 	background-color: ${theme.main.background};
 	border: 1px solid ${theme.form.border};

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import routes from '../routes/routes';
 import CentralizedPage from '../components/containers/CentralizedPage';
 import StandardForm from '../components/forms/StandardForm';
@@ -130,6 +130,7 @@ export default function SignUp() {
 					Cadastrar
 				</SubmitButton>
 			</StandardForm>
+			<Link to={routes.login}>Já sou cadastrado!</Link>
 		</CentralizedPage>
 	);
 }

@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import CentralizedPage from '../components/containers/CentralizedPage';
 import StandardForm from '../components/forms/StandardForm';
 import SubmitButton from '../components/forms/SubmitButton';
@@ -24,7 +24,7 @@ export default function Login() {
 	useEffect(() => {
 		const storedUser = loadUser();
 		if (storedUser) {
-			checkToken({ token: storedUser.token })
+			return checkToken({ token: storedUser.token })
 				.then(response => {
 					setFirstLoad(false);
 
@@ -37,6 +37,7 @@ export default function Login() {
 					setFirstLoad(false);
 				});
 		}
+		setFirstLoad(false);
 	}, []);
 
 	function formSubmit(event) {
@@ -71,43 +72,46 @@ export default function Login() {
 			{firstLoad ? (
 				<CircleLoader />
 			) : (
-				<StandardForm formLabel='Login' onSubmit={formSubmit}>
-					<TextInput
-						label='Email'
-						placeholder='exemplo@exemplo.com'
-						value={inputs.email}
-						valueModifier={event =>
-							loading
-								? null
-								: setInputs({
-										...inputs,
-										email: event.target.value,
-								  })
-						}
-						type='email'
-						loading={loading}
-					/>
+				<>
+					<StandardForm formLabel='Login' onSubmit={formSubmit}>
+						<TextInput
+							label='Email'
+							placeholder='exemplo@exemplo.com'
+							value={inputs.email}
+							valueModifier={event =>
+								loading
+									? null
+									: setInputs({
+											...inputs,
+											email: event.target.value,
+									  })
+							}
+							type='email'
+							loading={loading}
+						/>
 
-					<TextInput
-						label='Senha'
-						placeholder='Senha'
-						value={inputs.password}
-						valueModifier={event =>
-							loading
-								? null
-								: setInputs({
-										...inputs,
-										password: event.target.value,
-								  })
-						}
-						type='password'
-						loading={loading}
-					/>
+						<TextInput
+							label='Senha'
+							placeholder='Senha'
+							value={inputs.password}
+							valueModifier={event =>
+								loading
+									? null
+									: setInputs({
+											...inputs,
+											password: event.target.value,
+									  })
+							}
+							type='password'
+							loading={loading}
+						/>
 
-					<SubmitButton loading={loading} type='submit'>
-						Entrar
-					</SubmitButton>
-				</StandardForm>
+						<SubmitButton loading={loading} type='submit'>
+							Entrar
+						</SubmitButton>
+					</StandardForm>
+					<Link to={routes.signUp}>Ainda não sou cadastrado!</Link>
+				</>
 			)}
 		</CentralizedPage>
 	);
