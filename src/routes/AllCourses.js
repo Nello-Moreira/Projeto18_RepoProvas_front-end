@@ -1,3 +1,9 @@
+import Header from '../components/header/Header';
+
 export default function AllCourses() {
-	return <div>AllCourses</div>;
+	return (
+		<div>
+			<Header />
+		</div>
+	);
 }

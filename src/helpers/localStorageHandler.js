@@ -9,4 +9,8 @@ const loadUser = () => {
 	return JSON.parse(storedUser);
 };
 
-export { saveUser, loadUser };
+const removeUser = () => {
+	localStorage.removeItem(localStorageKey);
+};
+
+export { saveUser, loadUser, removeUser };

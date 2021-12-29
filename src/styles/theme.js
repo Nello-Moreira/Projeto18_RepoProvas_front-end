@@ -1,8 +1,17 @@
 const theme = {
-	main: { background: '#fff' },
-	cover: { text: '#fff', background: '#6ABED7' },
-	titles: { text: '#000' },
-	form: { border: '#6ABED7' },
+	main: {
+		background: '#fff',
+	},
+	cover: {
+		text: '#fff',
+		background: '#6ABED7',
+	},
+	titles: {
+		text: '#000',
+	},
+	form: {
+		border: '#6ABED7',
+	},
 	input: {
 		label: '#124aa3',
 		text: '#000',
@@ -15,6 +24,10 @@ const theme = {
 	button: {
 		text: '#fff',
 		background: '#6ABED7',
+	},
+	menuBar: {
+		text: '#124aa3',
+		background: '#def9f9',
 	},
 };
 

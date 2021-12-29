@@ -8,5 +8,5 @@ export default function Logo({ fontSize }) {
 const LogoStyle = styled.h1`
 	font-family: 'Pushster', cursive;
 	font-size: ${({ fontSize }) => fontSize || '40px'};
-	color: ${theme.cover.textColor};
+	color: ${theme.cover.text};
 `;

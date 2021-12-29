@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		font-size: 20px;
 		font-family: 'Roboto', sans-serif;
+		--header-height: 50px;
 		
 		* {
 			box-sizing: border-box;
