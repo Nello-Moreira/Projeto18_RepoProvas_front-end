@@ -29,6 +29,16 @@ const theme = {
 		text: '#124aa3',
 		background: '#def9f9',
 	},
+	informationTitle: {
+		text: '#104293',
+		border: '#124aa3',
+		background: '#fff',
+	},
+	informationContainer: {
+		text: '#124aa3',
+		border: '#6ABED7',
+		background: '#e7f3f7',
+	},
 };
 
 export default theme;

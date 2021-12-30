@@ -39,7 +39,7 @@ const Menu = styled.div`
 	position: absolute;
 	top: var(--header-height);
 	left: ${({ menuClosed }) =>
-		menuClosed ? 'calc(0px - var(--menu-width))' : '0px'};
+		menuClosed ? 'calc(0px - var(--menu-width) - 250px)' : '0px'};
 	transition: left 0.5s;
 	display: flex;
 	flex-direction: column;

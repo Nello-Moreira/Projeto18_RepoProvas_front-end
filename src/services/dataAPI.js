@@ -21,4 +21,7 @@ const checkToken = token => axiosBase.post('/session', token);
 const postLogout = token =>
 	axiosBase.post('/logout', {}, setAuthorization(token));
 
-export { postSignUp, postLogin, checkToken, postLogout };
+const getAllCourses = token =>
+	axiosBase.get('/courses', setAuthorization(token));
+
+export { postSignUp, postLogin, checkToken, postLogout, getAllCourses };

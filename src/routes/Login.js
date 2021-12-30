@@ -8,7 +8,7 @@ import CircleLoader from '../loaders/CircleLoader';
 import routes from './routes';
 import { postLogin, checkToken } from '../services/dataAPI';
 import { loginErrors } from '../services/responseErrors';
-import { saveUser, loadUser } from '../helpers/localStorageHandler';
+import { saveUser, loadUser, removeUser } from '../helpers/localStorageHandler';
 import UserContext from '../contexts/UserContext';
 
 export default function Login() {
@@ -30,8 +30,9 @@ export default function Login() {
 
 					if (response.data.valid) {
 						setUser(storedUser);
-						navigate(routes.allCourses);
+						return navigate(routes.allCourses);
 					}
+					removeUser();
 				})
 				.catch(() => {
 					setFirstLoad(false);
