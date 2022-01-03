@@ -14,8 +14,10 @@ export default function InformationTitle({ firstColumn, secondColumn }) {
 const TitleContainer = styled(InformationContainerStyle)`
 	font-size: 1.5rem;
 	color: ${theme.informationTitle.text};
+	margin-bottom: 10px;
 	background-color: ${theme.informationTitle.background};
 	border: none;
 	border-bottom: 1px solid ${theme.informationTitle.border};
 	border-radius: 0px;
+	cursor: default;
 `;

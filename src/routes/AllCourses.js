@@ -8,9 +8,8 @@ import SingleColumnPage from '../components/containers/SingleColumnPage';
 import AllCoursesContent from '../components/AllCoursesContent';
 
 export default function AllCourses() {
-	const [firstLoad, setFirstLoad] = useState(true);
 	const { user } = useContext(UserContext);
-
+	const [firstLoad, setFirstLoad] = useState(true);
 	const [courses, setCourses] = useState(null);
 
 	useEffect(() => {

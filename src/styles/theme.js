@@ -39,6 +39,10 @@ const theme = {
 		border: '#6ABED7',
 		background: '#e7f3f7',
 	},
+	categoryTitle: {
+		text: '#124aa3',
+		background: 'transparent',
+	},
 };
 
 export default theme;

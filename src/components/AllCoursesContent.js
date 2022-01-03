@@ -7,7 +7,7 @@ export default function AllCoursesContent({ courses }) {
 
 	return (
 		<>
-			{courses ? (
+			{courses.length > 0 ? (
 				courses.map(course => (
 					<InformationContainer
 						firstColumn={course.name}

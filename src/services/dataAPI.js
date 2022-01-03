@@ -24,4 +24,18 @@ const postLogout = token =>
 const getAllCourses = token =>
 	axiosBase.get('/courses', setAuthorization(token));
 
-export { postSignUp, postLogin, checkToken, postLogout, getAllCourses };
+const getSubjects = ({ id, token }) =>
+	axiosBase.get(`/courses/${id}/subjects`, setAuthorization(token));
+
+const getProfessors = ({ id, token }) =>
+	axiosBase.get(`/courses/${id}/professors`, setAuthorization(token));
+
+export {
+	postSignUp,
+	postLogin,
+	checkToken,
+	postLogout,
+	getAllCourses,
+	getSubjects,
+	getProfessors,
+};
