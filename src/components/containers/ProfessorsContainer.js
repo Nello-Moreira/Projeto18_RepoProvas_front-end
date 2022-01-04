@@ -20,7 +20,7 @@ export default function ProfessorsContainer({ professors }) {
 						secondColumn={professor.examsQuantity}
 						onClick={() =>
 							navigate(
-								routes.subject.replace(':id', professor.id)
+								routes.teacher.replace(':id', professor.id)
 							)
 						}
 						key={professor.id}

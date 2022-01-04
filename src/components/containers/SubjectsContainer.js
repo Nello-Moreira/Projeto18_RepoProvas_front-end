@@ -17,19 +17,6 @@ export default function SubjectsContainer({ subjects }) {
 		});
 	}
 
-	Object.keys(seasons).map(season => {
-		seasons[season].map(subject => (
-			<InformationContainer
-				firstColumn={subject.name}
-				secondColumn={subject.examsQuantity}
-				onClick={() =>
-					navigate(routes.subject.replace(':id', subject.id))
-				}
-				key={subject.id}
-			/>
-		));
-	});
-
 	return (
 		<div>
 			<InformationTitle
@@ -38,28 +25,29 @@ export default function SubjectsContainer({ subjects }) {
 			/>
 
 			{subjects.length > 0 ? (
-				Object.keys(seasons).map(season => {
-					return (
-						<div>
-							<CategoryTitle>Período: {season}</CategoryTitle>
-							{seasons[season].map(subject => (
-								<InformationContainer
-									firstColumn={subject.name}
-									secondColumn={subject.examsQuantity}
-									onClick={() =>
-										navigate(
-											routes.subject.replace(
-												':id',
-												subject.id
-											)
+				Object.keys(seasons).map((season, i) => (
+					<section key={i}>
+						<CategoryTitle key={season}>
+							Período: {season}
+						</CategoryTitle>
+
+						{seasons[season].map(subject => (
+							<InformationContainer
+								firstColumn={subject.name}
+								secondColumn={subject.examsQuantity}
+								onClick={() =>
+									navigate(
+										routes.subject.replace(
+											':id',
+											subject.id
 										)
-									}
-									key={subject.id}
-								/>
-							))}
-						</div>
-					);
-				})
+									)
+								}
+								key={subject.id}
+							/>
+						))}
+					</section>
+				))
 			) : (
 				<p>Nenhuma disciplina encontrada</p>
 			)}
