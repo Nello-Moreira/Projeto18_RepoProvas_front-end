@@ -33,6 +33,9 @@ const getProfessors = ({ id, token }) =>
 const getSubjectExams = ({ subjectId, token }) =>
 	axiosBase.get(`/subjects/${subjectId}`, setAuthorization(token));
 
+const getProfessorExams = ({ professorId, token }) =>
+	axiosBase.get(`/professors/${professorId}`, setAuthorization(token));
+
 export {
 	postSignUp,
 	postLogin,
@@ -42,4 +45,5 @@ export {
 	getSubjects,
 	getProfessors,
 	getSubjectExams,
+	getProfessorExams,
 };
