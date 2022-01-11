@@ -36,6 +36,12 @@ const getSubjectExams = ({ subjectId, token }) =>
 const getProfessorExams = ({ professorId, token }) =>
 	axiosBase.get(`/professors/${professorId}`, setAuthorization(token));
 
+const getExamsCategories = token =>
+	axiosBase.get('/exams/categories', setAuthorization(token));
+
+const postExam = ({ exam, token }) =>
+	axiosBase.post('/exams', exam, setAuthorization(token));
+
 export {
 	postSignUp,
 	postLogin,
@@ -46,4 +52,6 @@ export {
 	getProfessors,
 	getSubjectExams,
 	getProfessorExams,
+	getExamsCategories,
+	postExam,
 };

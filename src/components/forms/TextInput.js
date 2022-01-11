@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
+import LabelStyle from './LabelStyle';
 
 export default function TextInput({
 	label,
@@ -21,27 +22,20 @@ export default function TextInput({
 				placeholder={placeholder}
 				type={type}
 				required={required}
-				$loading={loading}
 				$autoComplete={true}
+				disabled={loading}
 			/>
 		</>
 	);
 }
 
-const LabelStyle = styled.label`
-	color: ${theme.input.label};
-	width: 100%;
-`;
-
 const InputStyle = styled.input`
 	font-size: 1rem;
-	color: ${({ $loading }) =>
-		$loading ? theme.input.loadingText : theme.input.text};
+	color: ${theme.input.text};
 	width: 100%;
 	padding: 0.5rem 0.5rem;
 	margin-top: 0.2rem;
-	background-color: ${({ $loading }) =>
-		$loading ? theme.input.loadingBackground : theme.input.background};
+	background-color: ${theme.input.background};
 	border: 1px solid ${theme.input.border};
 	border-radius: 5px;
 	outline: none;
@@ -50,10 +44,8 @@ const InputStyle = styled.input`
 		color: ${theme.input.placeholder};
 	}
 
-	:focus {
-		color: ${({ $loading }) =>
-			$loading ? 'transparent' : theme.input.text};
-		text-shadow: ${({ $loading }) =>
-			$loading ? `0px 0px 0px ${theme.input.loadingText}` : 'none'};
+	:disabled {
+		color: ${theme.input.loadingText};
+		background-color: ${theme.input.loadingBackground};
 	}
 `;

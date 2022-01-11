@@ -22,7 +22,8 @@ const FormStyle = styled.form`
 	flex-direction: column;
 	align-items: center;
 
-	input {
+	input,
+	select {
 		margin-bottom: 1rem;
 	}
 
