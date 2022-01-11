@@ -25,7 +25,7 @@ export default function Home() {
 const HomeCover = styled.div`
 	height: 100vh;
 	width: 100vw;
-	padding: 30px;
+	/* padding: 30px; */
 	background-color: ${theme.cover.background};
 	display: flex;
 	align-items: center;
@@ -39,9 +39,19 @@ const LogoContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 
+	h1 {
+		font-size: 4.5rem;
+	}
+
 	p {
 		text-align: center;
 		margin-top: 50px;
+	}
+
+	@media (max-width: 700px) {
+		h1 {
+			font-size: 2.5rem;
+		}
 	}
 `;
 

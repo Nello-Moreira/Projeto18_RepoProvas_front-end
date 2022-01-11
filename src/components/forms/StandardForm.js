@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 
-export default function StandardForm({ formLabel, onSubmit, children }) {
+export default function StandardForm({
+	formLabel,
+	onSubmit,
+	margin,
+	children,
+}) {
 	return (
-		<FormStyle onSubmit={onSubmit}>
+		<FormStyle margin={margin} onSubmit={onSubmit}>
 			<FormLabel>{formLabel}</FormLabel>
 			{children}
 		</FormStyle>
@@ -12,7 +17,7 @@ export default function StandardForm({ formLabel, onSubmit, children }) {
 
 const FormStyle = styled.form`
 	width: 50vw;
-	margin-bottom: 50px;
+	margin: ${({ margin }) => margin || '0 0 50px'};
 	padding: 1.5rem 1rem;
 	background-color: ${theme.main.background};
 	border: 1px solid ${theme.form.border};
@@ -32,7 +37,7 @@ const FormStyle = styled.form`
 	}
 
 	@media (max-width: 600px) {
-		height: 100vh;
+		height: 100%;
 		width: 100vw;
 		border-radius: 0px;
 		border: none;

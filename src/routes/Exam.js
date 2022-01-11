@@ -61,8 +61,12 @@ export default function Exam() {
 	}
 
 	return (
-		<PageWithHeader margin={'calc(var(--header-height) + 2rem)'}>
-			<StandardForm formLabel='Nova prova' onSubmit={formSubmit}>
+		<PageWithHeader margin={'calc(var(--header-height) + 1.5rem) 0 0'}>
+			<StandardForm
+				formLabel='Nova prova'
+				onSubmit={formSubmit}
+				margin='0px'
+			>
 				<TextInput
 					label='Nome'
 					placeholder='2020.1'
