@@ -4,7 +4,7 @@ import CentralizedPage from '../components/containers/CentralizedPage';
 import StandardForm from '../components/forms/StandardForm';
 import SubmitButton from '../components/forms/SubmitButton';
 import TextInput from '../components/forms/TextInput';
-import CircleLoader from '../loaders/CircleLoader';
+import CircleLoader from '../components/loaders/CircleLoader';
 import routes from './routes';
 import { postLogin, checkToken } from '../services/dataAPI';
 import { loginErrors } from '../services/responseErrors';

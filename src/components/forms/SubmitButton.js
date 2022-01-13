@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
+import ThreeDotsLoader from '../loaders/ThreeDotsLoader';
 
 export default function SubmitButton({ loading, otherProps, children }) {
 	return (
 		<ButtonStyle $loading={loading} {...otherProps}>
-			{children}
+			{loading ? <ThreeDotsLoader /> : children}
 		</ButtonStyle>
 	);
 }

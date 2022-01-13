@@ -5,7 +5,7 @@ import PageWithHeader from '../components/containers/PageWithHeader';
 import ProfessorsContainer from '../components/containers/ProfessorsContainer';
 import SubjectsContainer from '../components/containers/SubjectsContainer';
 import UserContext from '../contexts/UserContext';
-import CircleLoader from '../loaders/CircleLoader';
+import CircleLoader from '../components/loaders/CircleLoader';
 import { getProfessors, getSubjects } from '../services/dataAPI';
 
 export default function Course() {

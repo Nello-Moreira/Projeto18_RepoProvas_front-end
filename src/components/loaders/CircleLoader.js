@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Loader from 'react-loader-spinner';
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
 export default function CircleLoader({ customStyle = {} }) {
 	return (

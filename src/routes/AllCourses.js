@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import UserContext from '../contexts/UserContext';
-import CircleLoader from '../loaders/CircleLoader';
+import CircleLoader from '../components/loaders/CircleLoader';
 import { getAllCourses } from '../services/dataAPI';
 import PageWithHeader from '../components/containers/PageWithHeader';
 import InformationTitle from '../components/containers/InformationTitle';
